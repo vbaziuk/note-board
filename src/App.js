@@ -6,9 +6,10 @@ import { purple } from '@mui/material/colors'
 
 // custom theme created here
 const theme = createTheme({
+  // #483d8b is mui 'DarkSlateBlue' color code (for radio icons)
   palette: {
     primary: {
-      main: '#fefefe'
+      main: '#483d8b'
     }
   },
   typography: {
