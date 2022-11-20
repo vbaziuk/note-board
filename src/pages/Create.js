@@ -13,11 +13,14 @@ import { styled } from '@mui/system';
 import { FormControlLabel } from '@material-ui/core';
 
 import { FormControl, FormLabel } from '@mui/material/';
+import { useHistory } from 'react-router-dom';
 
 const StyledButton = styled(Button)({
   backgroundColor: 'darkslateblue',
   color: 'white',
-  margin: 1
+  // margin: 1,
+  marginTop: 20,
+  marginBottom: 20
 });
 
 
@@ -41,6 +44,7 @@ export default function Create() {
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
+  const history = useHistory()
 
   const [category, setCategory] = useState('todos')
 
@@ -59,7 +63,11 @@ export default function Create() {
     }
 
     if (title && details) {
-      console.log(title, details, category)
+      fetch('http://localhost:8000/notes', {
+        method: 'POST',
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({ title, details, category })
+      }).then(() => history.push('/'))
     }
   }
 
@@ -103,7 +111,6 @@ export default function Create() {
 
 
         <StyledFormControl>
-        {/* <FormControl> */}
           <FormLabel>
             Note Category
           </FormLabel>
@@ -117,7 +124,6 @@ export default function Create() {
             <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
             <FormControlLabel value="work" control={<Radio />} label="Work" />
           </RadioGroup>
-        {/* </FormControl> */}
         </StyledFormControl>
 
         <br/>
