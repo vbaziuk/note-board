@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid'
-import Paper from '@mui/material/Paper'
 import { Container } from '@mui/system'
 import NoteCard from '../components/NoteCard'
 

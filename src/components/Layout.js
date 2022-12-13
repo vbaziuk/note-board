@@ -1,32 +1,37 @@
-import { ClassNames } from '@emotion/react'
-import React from 'react'
-import { styled } from '@mui/system';
-import Drawer from '@mui/material/Drawer';
+import React, { useEffect } from 'react'
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemButton from '@mui/material/ListItemButton';
+import { SubjectOutlined, AddCircleOutlineOutlined } from '@mui/icons-material';
+import { useNavigate, redirect } from 'react-router-dom';
+import StyledDiv from './styledComponents/StyledDiv';
+import FlexDiv from './styledComponents/FlexDiv';
+import StyledDrawer from './styledComponents/StyledDrawer';
 
-
-const drawerWidth = 240
-
-const StyledDiv = styled('div')({
-  background: '#f9f9f9',
-  width: '100%'
-})
-
-const FlexDiv = styled('div')({
-  display: 'flex'
-})
-
-const StyledDrawer = styled(Drawer)({
-  width: drawerWidth
-})
+// this const also defined in StyledDrawer.js
+const drawerWidth = 240;
 
 export default function Layout({ children }) {
+  const navigate = useNavigate();
+
+  const menuItems = [
+    {
+      text: 'My Notes',
+      icon: <SubjectOutlined color="secondary" />,
+      path: '/'
+    },
+    {
+      text: 'Create Note',
+      icon: <AddCircleOutlineOutlined color="secondary" />,
+      path: '/create'
+    }
+  ]
+
   return (
     <FlexDiv>
-
-      {/* app bar  */}
-
       {/* side drawer */}
       <StyledDrawer
         sx={{
@@ -45,6 +50,27 @@ export default function Layout({ children }) {
             Better Notepad
           </Typography>
         </div>
+
+
+        {/* list links */}
+        <List>
+          {menuItems.map(item => (
+            <ListItem
+              // button
+              // <ListItemButton>
+              
+              // </ListItemButton>
+              key={item.text}
+              onClick={() => navigate(item.path)}   // this is where the page switch happens
+              // onClick={() => redirect(item.path)}
+            // currently, the navbar does not retain css when switching between pages
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text}></ListItemText>
+            </ListItem>
+
+          ))}
+        </List>
       </StyledDrawer>
 
       <StyledDiv>

@@ -1,42 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Container from '@mui/system/Container';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import TextField from '@material-ui/core/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-// import { css } from '@emotion/react';
-
-import { styled } from '@mui/system';
 import { FormControlLabel } from '@material-ui/core';
+import { FormLabel } from '@mui/material/';
+import { useNavigate } from 'react-router-dom';
 
-import { FormControl, FormLabel } from '@mui/material/';
-import { useHistory } from 'react-router-dom';
+import StyledButton from '../components/styledComponents/StyledButton';
+import StyledFormControl from '../components/styledComponents/StyledFormControl';
 
-const StyledButton = styled(Button)({
-  backgroundColor: 'darkslateblue',
-  color: 'white',
-  // margin: 1,
-  marginTop: 20,
-  marginBottom: 20
-});
-
-
-const StyledTextfield = styled(TextField)({
-  margin: 5
-})
-
-const StyledFormControl = styled(FormControl)({
-  // here
-  field: {
-    marginTop: 20,
-    marginBottom: 20,
-    display: 'block'
-  }
-})
-
+/**
+ * Create Page
+ */
 
 export default function Create() {
 
@@ -44,13 +23,14 @@ export default function Create() {
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
-  const history = useHistory()
 
   const [category, setCategory] = useState('todos')
 
+  const navigate = useNavigate()
+
+  // perform post request on submit
   const handleSubmit = (e) => {
     e.preventDefault()
-
     setTitleError(false)
     setDetailsError(false)
 
@@ -67,7 +47,7 @@ export default function Create() {
         method: 'POST',
         headers: {"Content-type": "application/json"},
         body: JSON.stringify({ title, details, category })
-      }).then(() => history.push('/'))
+      }).then(() => navigate('/'))
     }
   }
 
@@ -96,7 +76,7 @@ export default function Create() {
         />
 
 
-        <StyledTextfield
+        <TextField
           onChange={(e) => setDetails(e.target.value)}
           label="Details"
           variant="outlined"
