@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -8,18 +9,9 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { FormControlLabel } from '@mui/material';
 import { FormLabel } from '@mui/material/';
-import { useNavigate } from 'react-router-dom';
-
 import StyledButton from '../components/styledComponents/StyledButton';
 import StyledFormControl from '../components/styledComponents/StyledFormControl';
 
-import Button from '@mui/material/Button';
-
-// import { css } from '@emotion/react';
-
-/**
- * Create Page
- */
 
 export default function Create() {
 
@@ -27,12 +19,10 @@ export default function Create() {
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
-
   const [category, setCategory] = useState('todos')
 
   const navigate = useNavigate()
 
-  // perform post request on submit
   const handleSubmit = (e) => {
     e.preventDefault()
     setTitleError(false)
@@ -54,7 +44,6 @@ export default function Create() {
       }).then(() => navigate('/'))
     }
   }
-
 
   return (
     <Container size="sm">
@@ -92,10 +81,14 @@ export default function Create() {
           error={detailsError}
         />
 
-
         <StyledFormControl>
-          <FormLabel>
-            Note Category
+          <FormLabel
+          >
+            <Typography
+              color="textSecondary"
+            >
+              Note Category
+            </Typography>
           </FormLabel>
 
           <RadioGroup
@@ -104,7 +97,7 @@ export default function Create() {
               (e) => setCategory(e.target.value)
             }
           >
-            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="money" control={<Radio />} label="Events" />
             <FormControlLabel value="todos" control={<Radio />} label="To do's" />
             <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
             <FormControlLabel value="work" control={<Radio />} label="Work" />
