@@ -113,23 +113,7 @@ export default function Create() {
           Submit
         </StyledButton>
 
-
-
-        {/* <Button
-          // sx={{
-          //   backgroundColor: 'darkslateblue',
-          //   color: 'white',
-          //   marginTop: 2,
-          //   marginBottom: 2 
-          // }}
-          css={css`
-            backgroundColor: 'darkslateblue'
-          `}
-        >
-          Submit
-        </Button> */}
       </form>
-
     </Container>
   )
 }

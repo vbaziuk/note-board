@@ -10,6 +10,11 @@ import StyledDiv from './styledComponents/StyledDiv';
 import FlexDiv from './styledComponents/FlexDiv';
 import StyledDrawer from './styledComponents/StyledDrawer';
 
+import Box from '@mui/material/Box';
+
+import { AppBar } from '@mui/material';
+import { Toolbar } from '@mui/material';
+
 // this const also defined in StyledDrawer.js
 const drawerWidth = 240;
 
@@ -31,6 +36,21 @@ export default function Layout({ children }) {
 
   return (
     <FlexDiv>
+
+      {/* app bar */}
+      <AppBar
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`
+        }}
+      >
+        <Toolbar>
+          <Typography>
+            Welcome to the Notes App
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+
       {/* side drawer */}
       <StyledDrawer
         sx={{
@@ -45,7 +65,7 @@ export default function Layout({ children }) {
         anchor="left"
       >
         <div>
-          <Typography 
+          <Typography
             variant="h5"
             sx={{
               padding: '8px'
@@ -69,8 +89,19 @@ export default function Layout({ children }) {
           ))}
         </List>
       </StyledDrawer>
+
       <StyledDiv>
-        {children}
+        <Box
+          sx={{
+            // height: (theme) => `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`
+
+            // padding for the toolbar
+            height: (theme) => `calc(100% - ${theme.mixins.toolbar.minHeight}px)`,
+            paddingTop: (theme) => 15 + theme.mixins.toolbar.minHeight + "px"
+          }}
+        >
+          {children}
+        </Box>
       </StyledDiv>
     </FlexDiv>
   )

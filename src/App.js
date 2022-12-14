@@ -18,12 +18,8 @@ const theme = createTheme({
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightLight: 700
-  },
-  div: {
-    // padding: '5px',
-    // margin: '5px'
   }
-})
+});
 
 function App() {
   return (
