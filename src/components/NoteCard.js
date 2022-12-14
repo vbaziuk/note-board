@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
-import { IconButton } from '@material-ui/core'
+import { IconButton } from '@mui/material'
 import { DeleteOutlined } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 

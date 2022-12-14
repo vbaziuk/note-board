@@ -1,5 +1,5 @@
-import { styled } from '@mui/system';
-import { FormControl, FormLabel } from '@mui/material/';
+import { styled } from '@mui/material/styles';
+import { FormControl } from '@mui/material/';
 
 const StyledFormControl = styled(FormControl)({
     field: {
