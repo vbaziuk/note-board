@@ -17,6 +17,12 @@
       "details": "lorem ipsum put some text here buddy",
       "category": "reminders",
       "id": 4
+    },
+    {
+      "title": "testing out the new changes",
+      "details": "test out the new changes in this project",
+      "category": "todos",
+      "id": 5
     }
   ]
 }

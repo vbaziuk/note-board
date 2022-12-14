@@ -45,7 +45,12 @@ export default function Layout({ children }) {
         anchor="left"
       >
         <div>
-          <Typography variant="h5">
+          <Typography 
+            variant="h5"
+            sx={{
+              padding: '8px'
+            }}
+          >
             Better Notepad
           </Typography>
         </div>
