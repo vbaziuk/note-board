@@ -1,4 +1,4 @@
-import { styled } from '@mui/system';
+import { styled } from '@mui/material/styles';
 
 const StyledDiv = styled('div')({
     background: '#f9f9f9',

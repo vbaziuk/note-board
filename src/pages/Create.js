@@ -1,17 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/system/Container';
+import Container from '@mui/material/Container';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import { FormControlLabel } from '@material-ui/core';
+import { FormControlLabel } from '@mui/material';
 import { FormLabel } from '@mui/material/';
 import { useNavigate } from 'react-router-dom';
 
 import StyledButton from '../components/styledComponents/StyledButton';
 import StyledFormControl from '../components/styledComponents/StyledFormControl';
+
+import Button from '@mui/material/Button';
+
+// import { css } from '@emotion/react';
 
 /**
  * Create Page
@@ -45,7 +49,7 @@ export default function Create() {
     if (title && details) {
       fetch('http://localhost:8000/notes', {
         method: 'POST',
-        headers: {"Content-type": "application/json"},
+        headers: { "Content-type": "application/json" },
         body: JSON.stringify({ title, details, category })
       }).then(() => navigate('/'))
     }
@@ -53,7 +57,7 @@ export default function Create() {
 
 
   return (
-    <Container>
+    <Container size="sm">
       <Typography
         variant="h6"
         color="textSecondary"
@@ -74,7 +78,6 @@ export default function Create() {
           required
           error={titleError}
         />
-
 
         <TextField
           onChange={(e) => setDetails(e.target.value)}
@@ -97,7 +100,9 @@ export default function Create() {
 
           <RadioGroup
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={
+              (e) => setCategory(e.target.value)
+            }
           >
             <FormControlLabel value="money" control={<Radio />} label="Money" />
             <FormControlLabel value="todos" control={<Radio />} label="To do's" />
@@ -106,15 +111,30 @@ export default function Create() {
           </RadioGroup>
         </StyledFormControl>
 
-        <br/>
+        <br />
 
         <StyledButton
           type="submit"
           variant="contained"
-          endIcon={<KeyboardArrowRightIcon />}
-        >
+          endIcon={<KeyboardArrowRightIcon />}>
           Submit
         </StyledButton>
+
+
+
+        {/* <Button
+          // sx={{
+          //   backgroundColor: 'darkslateblue',
+          //   color: 'white',
+          //   marginTop: 2,
+          //   marginBottom: 2 
+          // }}
+          css={css`
+            backgroundColor: 'darkslateblue'
+          `}
+        >
+          Submit
+        </Button> */}
       </form>
 
     </Container>

@@ -4,9 +4,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
 import { SubjectOutlined, AddCircleOutlineOutlined } from '@mui/icons-material';
-import { useNavigate, redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import StyledDiv from './styledComponents/StyledDiv';
 import FlexDiv from './styledComponents/FlexDiv';
 import StyledDrawer from './styledComponents/StyledDrawer';
@@ -51,19 +50,12 @@ export default function Layout({ children }) {
           </Typography>
         </div>
 
-
         {/* list links */}
         <List>
           {menuItems.map(item => (
             <ListItem
-              // button
-              // <ListItemButton>
-              
-              // </ListItemButton>
               key={item.text}
-              onClick={() => navigate(item.path)}   // this is where the page switch happens
-              // onClick={() => redirect(item.path)}
-            // currently, the navbar does not retain css when switching between pages
+              onClick={() => navigate(item.path)}
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text}></ListItemText>
@@ -72,7 +64,6 @@ export default function Layout({ children }) {
           ))}
         </List>
       </StyledDrawer>
-
       <StyledDiv>
         {children}
       </StyledDiv>
