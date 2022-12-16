@@ -1,7 +1,5 @@
-### material-ui starter project
+# Note Board
 
+Note Board is a simple react app that allows users to input and save their notes all in one place.
 
-to run json-server:
-```
-$ json-server --watch data/db.json --port 8000
-```
+![image](./img/appimg.png)

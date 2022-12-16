@@ -1,34 +1,34 @@
 {
   "notes": [
     {
-      "title": "Grab equipment for Zabava",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "category": "reminders",
+      "title": "Test out Noteboard App",
+      "details": "test all main functionality",
+      "category": "work",
       "id": 1
     },
     {
-      "title": "testing out the new changes",
-      "details": "test out the new changes in this project",
+      "title": "Go grocery shopping",
+      "details": "Almond milk, eggs, spinach, bread",
+      "category": "reminders",
+      "id": 2
+    },
+    {
+      "title": "Set up autopay!",
+      "details": "Information in the email",
+      "category": "todos",
+      "id": 3
+    },
+    {
+      "title": "Test with large text body",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor luctus volutpat. Proin non elit scelerisque, condimentum ipsum ut, porttitor tellus. Vestibulum egestas ligula tempor, varius ipsum eget, venenatis turpis. Mauris in est volutpat, dapibus mi quis, laoreet est. Phasellus leo ligula, posuere vitae turpis vitae, dignissim finibus sapien. Mauris id accumsan nisi, vitae dignissim dui. Proin a purus mi. Praesent sed quam aliquam, gravida ex id, bibendum erat. ",
+      "category": "reminders",
+      "id": 4
+    },
+    {
+      "title": "Test another text body",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor luctus volutpat. Proin non elit scelerisque, condimentum ipsum ut, porttitor tellus. Vestibulum egestas ligula tempor, varius ipsum eget, venenatis turpis.",
       "category": "todos",
       "id": 5
-    },
-    {
-      "title": "test out the new app!",
-      "details": "just do some bs testing fam",
-      "category": "todos",
-      "id": 7
-    },
-    {
-      "title": "get cash from bank",
-      "details": "gotta pay my bookie.",
-      "category": "reminders",
-      "id": 9
-    },
-    {
-      "title": "tie in backend",
-      "details": "for this application",
-      "category": "todos",
-      "id": 10
     }
   ]
 }
