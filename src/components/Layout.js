@@ -15,6 +15,9 @@ import Box from '@mui/material/Box';
 import { AppBar } from '@mui/material';
 import { Toolbar } from '@mui/material';
 
+import { format } from 'date-fns';
+import Avatar from '@mui/material/Avatar';   // is this right?
+
 // this const also defined in StyledDrawer.js
 const drawerWidth = 240;
 
@@ -44,9 +47,22 @@ export default function Layout({ children }) {
         }}
       >
         <Toolbar>
-          <Typography>
-            Welcome to the Notes App
+          <Typography
+            sx={{
+              flexGrow: 1
+            }}
+          >
+            Today is the {format(new Date(), 'do MMMM Y')}
           </Typography>
+          <Typography>
+            Victor
+          </Typography>
+          <Avatar 
+            src="/vicpic.jpeg"
+            sx={{
+              marginLeft: (theme) => theme.spacing(1)
+            }}
+          />
         </Toolbar>
       </AppBar>
 
@@ -71,7 +87,7 @@ export default function Layout({ children }) {
               padding: '8px'
             }}
           >
-            Better Notepad
+            Note Board
           </Typography>
         </div>
 
@@ -93,9 +109,8 @@ export default function Layout({ children }) {
       <StyledDiv>
         <Box
           sx={{
-            // height: (theme) => `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`
-
             // padding for the toolbar
+            // https://stackoverflow.com/questions/69749086/mui-how-to-get-theme-mixins-toolbar-minheight-value-responsively
             height: (theme) => `calc(100% - ${theme.mixins.toolbar.minHeight}px)`,
             paddingTop: (theme) => 15 + theme.mixins.toolbar.minHeight + "px"
           }}

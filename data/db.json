@@ -13,10 +13,22 @@
       "id": 5
     },
     {
-      "title": "Lorem Ipsum is simply ",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+      "title": "test out the new app!",
+      "details": "just do some bs testing fam",
+      "category": "todos",
+      "id": 7
+    },
+    {
+      "title": "get cash from bank",
+      "details": "gotta pay my bookie.",
       "category": "reminders",
-      "id": 6
+      "id": 9
+    },
+    {
+      "title": "tie in backend",
+      "details": "for this application",
+      "category": "todos",
+      "id": 10
     }
   ]
 }
