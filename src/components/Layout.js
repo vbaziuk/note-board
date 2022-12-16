@@ -10,6 +10,14 @@ import StyledDiv from './styledComponents/StyledDiv';
 import FlexDiv from './styledComponents/FlexDiv';
 import StyledDrawer from './styledComponents/StyledDrawer';
 
+import Box from '@mui/material/Box';
+
+import { AppBar } from '@mui/material';
+import { Toolbar } from '@mui/material';
+
+import { format } from 'date-fns';
+import Avatar from '@mui/material/Avatar';   // is this right?
+
 // this const also defined in StyledDrawer.js
 const drawerWidth = 240;
 
@@ -31,6 +39,34 @@ export default function Layout({ children }) {
 
   return (
     <FlexDiv>
+
+      {/* app bar */}
+      <AppBar
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`
+        }}
+      >
+        <Toolbar>
+          <Typography
+            sx={{
+              flexGrow: 1
+            }}
+          >
+            Today is the {format(new Date(), 'do MMMM Y')}
+          </Typography>
+          <Typography>
+            Victor
+          </Typography>
+          <Avatar 
+            src="/vicpic.jpeg"
+            sx={{
+              marginLeft: (theme) => theme.spacing(1)
+            }}
+          />
+        </Toolbar>
+      </AppBar>
+
+
       {/* side drawer */}
       <StyledDrawer
         sx={{
@@ -45,8 +81,13 @@ export default function Layout({ children }) {
         anchor="left"
       >
         <div>
-          <Typography variant="h5">
-            Better Notepad
+          <Typography
+            variant="h5"
+            sx={{
+              padding: '8px'
+            }}
+          >
+            Note Board
           </Typography>
         </div>
 
@@ -64,8 +105,18 @@ export default function Layout({ children }) {
           ))}
         </List>
       </StyledDrawer>
+
       <StyledDiv>
-        {children}
+        <Box
+          sx={{
+            // padding for the toolbar
+            // https://stackoverflow.com/questions/69749086/mui-how-to-get-theme-mixins-toolbar-minheight-value-responsively
+            height: (theme) => `calc(100% - ${theme.mixins.toolbar.minHeight}px)`,
+            paddingTop: (theme) => 15 + theme.mixins.toolbar.minHeight + "px"
+          }}
+        >
+          {children}
+        </Box>
       </StyledDiv>
     </FlexDiv>
   )

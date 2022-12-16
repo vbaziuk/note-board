@@ -7,16 +7,28 @@
       "id": 1
     },
     {
-      "title": "Commit to git",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "title": "testing out the new changes",
+      "details": "test out the new changes in this project",
       "category": "todos",
-      "id": 3
+      "id": 5
     },
     {
-      "title": "test out adding a note",
-      "details": "lorem ipsum put some text here buddy",
+      "title": "test out the new app!",
+      "details": "just do some bs testing fam",
+      "category": "todos",
+      "id": 7
+    },
+    {
+      "title": "get cash from bank",
+      "details": "gotta pay my bookie.",
       "category": "reminders",
-      "id": 4
+      "id": 9
+    },
+    {
+      "title": "tie in backend",
+      "details": "for this application",
+      "category": "todos",
+      "id": 10
     }
   ]
 }

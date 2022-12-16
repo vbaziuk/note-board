@@ -19,7 +19,7 @@ export default function Create() {
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
-  const [category, setCategory] = useState('todos')
+  const [category, setCategory] = useState('events')
 
   const navigate = useNavigate()
 
@@ -97,7 +97,7 @@ export default function Create() {
               (e) => setCategory(e.target.value)
             }
           >
-            <FormControlLabel value="money" control={<Radio />} label="Events" />
+            <FormControlLabel value="events" control={<Radio />} label="Events" />
             <FormControlLabel value="todos" control={<Radio />} label="To do's" />
             <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
             <FormControlLabel value="work" control={<Radio />} label="Work" />
@@ -113,23 +113,7 @@ export default function Create() {
           Submit
         </StyledButton>
 
-
-
-        {/* <Button
-          // sx={{
-          //   backgroundColor: 'darkslateblue',
-          //   color: 'white',
-          //   marginTop: 2,
-          //   marginBottom: 2 
-          // }}
-          css={css`
-            backgroundColor: 'darkslateblue'
-          `}
-        >
-          Submit
-        </Button> */}
       </form>
-
     </Container>
   )
 }
